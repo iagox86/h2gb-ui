@@ -8,8 +8,22 @@ export default Ember.Component.extend({
   didReceiveAttrs: function() {
     this._super(...arguments);
 
-    var hex_value = this.get('value').toString(16);
     var prefix = this.get('noprefix') ? '' : '0x';
-    this.set('value', prefix + '0'.repeat(this.get('length') - hex_value.length) + hex_value);
+
+    var values = this.get('value');
+    var length = this.get('length');
+
+    if(typeof values !== 'object') {
+      values = [values];
+    }
+
+    values = values.map(function(value) {
+      var hex_value = value.toString(16);
+      return prefix + '0'.repeat(length - hex_value.length) + hex_value;
+    });
+
+    this.set('value', values);
+
+
   }
 });
