@@ -1,0 +1,15 @@
+<div style='display: inline-block; min-width: 200px'>
+  {{#if (eq type 'uint8_t')}}
+    db {{number-hex value=value length=2}}
+  {{else if (eq type 'uint16_t')}}
+    dw {{number-hex value=value length=4}}
+  {{else if (eq type 'uint32_t')}}
+    dw {{number-hex value=value length=8}}
+  {{else if (eq type 'offset')}}
+    ptr {{number-offset value=value}}
+  {{else if (eq type 'rgb')}}
+    rgb #{{value}}
+  {{else}}
+    oops: {{value}}
+  {{/if}}
+</div>

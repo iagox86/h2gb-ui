@@ -1,0 +1,5 @@
+<div style='display: inline-block; min-width: 150px'>
+  {{#each raw as |byte|}}
+    {{number-hex value=byte length=2 noprefix=true}}
+  {{/each}}
+</div>

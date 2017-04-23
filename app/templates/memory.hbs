@@ -1,0 +1,12 @@
+<p>Current revision: {{model.revision}}</p>
+
+{{#each model.entries as |entry|}}
+<p><tt>
+  {{memory-address address=entry.address}}
+  {{memory-raw raw=entry.raw}}
+  {{memory-value type=entry.data.type subtype=entry.data.subtype value=entry.data.value}}
+  {{#if entry.data.comment}}
+    ; {{entry.data.comment}}
+  {{/if}}
+</tt></p>
+{{/each}}
