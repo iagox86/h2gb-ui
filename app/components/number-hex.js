@@ -22,8 +22,6 @@ export default Ember.Component.extend({
       return prefix + '0'.repeat(length - hex_value.length) + hex_value;
     });
 
-    this.set('value', values);
-
-
+    this.set('value', values.join(','));
   }
 });
