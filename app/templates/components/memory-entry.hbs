@@ -1,0 +1,18 @@
+<div style='padding-bottom: 5px'>
+  {{#if entry.xrefs}}
+    {{#line-with-address address=entry.address}}
+      &nbsp;&nbsp;&nbsp;; XRef:
+      {{#each entry.xrefs as |xref|}}
+        {{number-offset value=xref}}
+      {{/each}}
+    {{/line-with-address}}
+  {{/if}}
+
+  {{#line-with-address address=entry.address}}
+    {{memory-raw raw=entry.raw}}
+    {{memory-value type=entry.data.type subtype=entry.data.subtype value=entry.data.value}}
+    {{#if entry.data.comment}}
+      ; {{entry.data.comment}}
+    {{/if}}
+  {{/line-with-address}}
+</div>
