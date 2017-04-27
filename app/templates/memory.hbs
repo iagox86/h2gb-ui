@@ -1,16 +1,7 @@
 <p>Current revision: {{model.revision}}</p>
 
-<p>Test: {{editing}}</p>
-
-{{#if editing}}
-  <div style='position: fixed; top: 50%; left: 50%; background-color: #c0c0c0; z-index: 1002; overflow: auto; width: 600px; height: 200px; margin-left: -300px; margin-top: -200px;'>
-    <p><strong>Editing address 0x{{memory-address address=editing.address}}</strong></p>
-    <p>Type: {{input value=edit_type}}</p>
-    <p>Value: {{input value=edit_value}}</p>
-    <p>Comment: {{input value=edit_comment}}</p>
-    <p><button {{action "doedit" entry}}>Save</button></p>
-  </div>
-{{/if}}
+<button {{action 'undo'}}>Undo</button>
+<button {{action 'redo'}}>Redo</button>
 
 {{#each model.entries as |entry|}}
 {{memory-entry entry=entry showedit='showedit' action='test' click='test2'}}

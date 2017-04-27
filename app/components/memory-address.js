@@ -6,11 +6,7 @@ export default Ember.Component.extend({
 
   actions: {
     addressclick: function(address) {
-      console.log(address);
-      console.log('#address-' + address);
-      console.log($('#address-' + address));
-      console.log($('#address-' + address).offset());
-      $('html, body').animate({scrollTop: $('#address-' + address).offset().top + 'px'}, 'fast');
+      Ember.$('html, body').animate({scrollTop: Ember.$('#address-' + address).offset().top + 'px'}, 'fast');
     }
   },
 });

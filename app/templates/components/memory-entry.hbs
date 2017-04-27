@@ -1,4 +1,19 @@
-<div style='padding-bottom: 6px' id='address-{{entry.address}}'>
+{{#if showEdit}}
+<div style='position: fixed; top: 50%; left: 50%; background-color: #c0c0c0; z-index: 1002; overflow: auto; width: 600px; height: 400px; margin-left: -300px; margin-top: -200px;'>
+  <p>Address (in decimal, please): {{input value=editAddress}}</p>
+  <p>Length: {{input value=editLength}}</p>
+  <p>Type (this is only used for display): {{input value=editType}}</p>
+  <p>Value (this is what is displayed): {{input value=editValue}}</p>
+  <p>Comment: {{input value=editComment}}</p>
+  <p>Refs (comma-separated list of decimal addresses): {{input value=editRefs}}</p>
+  <p>
+    <button {{action 'saveEdit'}}>Save</button>
+    <button {{action 'cancelEdit'}}>Cancel</button>
+  </p>
+</div>
+{{/if}}
+
+<div style='padding-bottom: 6px' id='address-{{entry.address}}' {{action 'edit' entry on='doubleClick'}}>
   {{#if entry.xrefs}}
     {{#line-with-address address=entry.address}}
       &nbsp;&nbsp;&nbsp;; XRef:
