@@ -6,7 +6,7 @@
   {{else if (eq type 'uint32_t')}}
     dw {{number-hex value=value length=8}}
   {{else if (eq type 'offset')}}
-    ptr {{number-offset value=value}}
+    ptr {{memory-address address=value}}
   {{else if (eq type 'rgb')}}
     rgb #{{value}}
   {{else}}

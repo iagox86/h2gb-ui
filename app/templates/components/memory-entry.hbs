@@ -1,9 +1,9 @@
-<div style='padding-bottom: 6px'>
+<div style='padding-bottom: 6px' id='address-{{entry.address}}'>
   {{#if entry.xrefs}}
-    {{#line-with-address address=entry.address mytest5=mytest6}}
+    {{#line-with-address address=entry.address}}
       &nbsp;&nbsp;&nbsp;; XRef:
       {{#each entry.xrefs as |xref|}}
-        {{number-offset value=xref}}
+        {{memory-address address=xref}}
       {{/each}}
     {{/line-with-address}}
   {{/if}}

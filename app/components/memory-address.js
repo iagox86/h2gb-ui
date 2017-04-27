@@ -5,10 +5,12 @@ export default Ember.Component.extend({
   tagName: '',
 
   actions: {
-    mytest: function() {
-      console.log('memory-address.js :: actions/mytest :: start');
-      this.sendAction('mytest4', this.get('address'));
-      console.log('memory-address.js :: actions/mytest :: finish');
-    },
-  }
+    addressclick: function(address) {
+      console.log(address);
+      console.log('#address-' + address);
+      console.log($('#address-' + address));
+      console.log($('#address-' + address).offset());
+      $('html, body').animate({scrollTop: $('#address-' + address).offset().top + 'px'}, 'fast');
+    }
+  },
 });
