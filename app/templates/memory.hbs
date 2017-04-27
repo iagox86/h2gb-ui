@@ -13,6 +13,5 @@
 {{/if}}
 
 {{#each model.entries as |entry|}}
-<a href='#' {{action "showedit" entry}}>Edit</a> {{memory-entry entry=entry}}
+{{memory-entry entry=entry showedit='showedit' mytest4='mytest2'}}
 {{/each}}
-

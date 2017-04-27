@@ -1,6 +1,6 @@
 <div style='padding-bottom: 6px'>
   {{#if entry.xrefs}}
-    {{#line-with-address address=entry.address}}
+    {{#line-with-address address=entry.address mytest5=mytest6}}
       &nbsp;&nbsp;&nbsp;; XRef:
       {{#each entry.xrefs as |xref|}}
         {{number-offset value=xref}}
