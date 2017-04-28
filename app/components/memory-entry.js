@@ -28,9 +28,12 @@ export default Ember.Component.extend({
       var type    = this.get('editType');
       var value   = this.get('editValue');
       var comment = this.get('editComment');
-      var refs = this.get('editRefs').split(/[ ,]+/).map(function(val) {
-        return parseInt(val);
-      });
+      var refs    = null;
+      if(this.get('editRefs')) {
+        refs = this.get('editRefs').split(/[ ,]+/).map(function(val) {
+          return parseInt(val);
+        });
+      }
 
       var editData = {
         'address': address,
@@ -39,7 +42,7 @@ export default Ember.Component.extend({
         'value':   value,
         'comment': comment,
         'refs':    refs,
-      }
+      };
 
       Ember.$.ajax('http://localhost:4567/api/edit_memory/1', {
         data: JSON.stringify(editData),

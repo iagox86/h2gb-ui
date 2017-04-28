@@ -8,7 +8,6 @@ export default Ember.Controller.extend({
         contentType: 'application/json',
         type: 'POST',
       }).then(function() {
-        me.set('showEdit', false);
         window.location.reload();
       });
     },
@@ -19,7 +18,6 @@ export default Ember.Controller.extend({
         contentType: 'application/json',
         type: 'POST',
       }).then(function() {
-        me.set('showEdit', false);
         window.location.reload();
       });
     },
